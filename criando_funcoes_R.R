@@ -40,3 +40,43 @@ potencia <- function(x, e = 2) { # Estabelece o expoente 2 como padrão
 
 potencia(10)
 potencia(3)
+
+### 4. Construindo uma função para análise descritiva
+
+library(dplyr)
+
+dados <- iris
+
+dados %>%
+  group_by(Species) %>%
+  summarise(Media = mean(Sepal.Length),
+            DP = sd(Sepal.Length),
+            Minimo = min(Sepal.Length),
+            Maximo = max(Sepal.Length))
+
+desc_num <- function(df, grupo, vd) {
+  
+  library(dplyr)
+  
+  res <- df %>%
+  group_by({{grupo}}) %>%
+  summarise(Media = mean({{vd}}),
+            DP = sd({{vd}}),
+            Minimo = min({{vd}}),
+            Maximo = max({{vd}}))
+  
+  return(res)
+}
+
+desc_num(iris, Species, Petal.Width)
+
+
+
+
+
+
+
+
+
+
+  
