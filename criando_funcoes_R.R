@@ -30,3 +30,13 @@ potencia(5, 2) # Lê-se potencia de 5 elevado a 2, primeiro deve-se
 # - Argumentos nomeados
 
 potencia(e = 2, x = 5) # A ordem não importa, o resultado é o mesmo.
+
+### 3. Estabelecendo valores default para os argumentos
+
+potencia <- function(x, e = 2) { # Estabelece o expoente 2 como padrão
+  res <- x^e
+  return(res)
+}
+
+potencia(10)
+potencia(3)
