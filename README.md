@@ -6,7 +6,8 @@
 
 ## Tópicos do script
 
-- A estrutura básica de uma função
+### A estrutura básica de uma função
+
 * 1. Componentes: nome da função, argumentos e 'receita';
 * 2. Argumentos nomeados e não-nomeados;
 * 3. Estabelecendo valores default para os argumentos;
