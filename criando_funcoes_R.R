@@ -101,7 +101,12 @@ graph <- function(df, grupo, vd1, vd2, xlab, ylab, tlegend) {
 graph(iris, Species, Sepal.Width, Petal.Length, "Comprimento de Sáplas (cm)",
       "Comprimento de Pétalas (cm)", "Espécies")
 
+### 6. Salvar as funções em um documento separado 
 
+##### Isso facilita e organiza o projeto, dessa forma, basta rodar as 
+##### funções do documento separado para fazer as análises.
+
+source("/Users/jeann/Documents/pRaticando-Softawer-R")
 
 
 
