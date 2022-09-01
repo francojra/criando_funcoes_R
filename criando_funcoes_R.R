@@ -69,10 +69,37 @@ desc_num <- function(df, grupo, vd) {
 }
 
 desc_num(iris, Species, Petal.Width)
+desc_num(iris, Species, Sepal.Width)
+desc_num(iris, Species, Petal.Length)
+desc_num(iris, Species, Sepal.Length)
 
+### 5. Construindo uma função para gráficos
 
+library(ggplot2)
 
+ggplot(iris, aes(x = Sepal.Length, y = Petal.Width, color = Species)) +
+  geom_point(size = 3, shape = 15, alpha = 0.7) +
+  labs(x = "Comprimento de Sáplas (cm)", 
+       y = "Comprimento de Pétalas (cm)",
+       color = "Espécies") +
+  theme_bw(base_size = 14)
 
+graph <- function(df, grupo, vd1, vd2, xlab, ylab, tlegend) {
+  
+  library(ggplot2)
+  
+  res <- ggplot(df, aes(x = {{vd1}}, y = {{vd2}}, color = {{grupo}})) +
+  geom_point(size = 3, shape = 15, alpha = 0.7) +
+  labs(x = xlab, 
+       y = ylab,
+       color = tlegend) +
+  theme_bw(base_size = 14)
+  
+  return(res)
+}
+
+graph(iris, Species, Sepal.Width, Petal.Length, "Comprimento de Sáplas (cm)",
+      "Comprimento de Pétalas (cm)", "Espécies")
 
 
 
